@@ -70,7 +70,7 @@ export const servicesData: ServiceItem[] = [
   { 
     id: "ui-design",
     icon: <FaPalette size={32} />, 
-    title: "UI Design & Templates", 
+    title: "UI/UX Design", 
     desc: "Clean, professional templates and custom designs that align with your brand identity.",
     longDesc: "We don't just write code; we design experiences. We create high-fidelity Figma prototypes before writing a single line of code, ensuring the final product matches your vision perfectly. We deliver pixel-perfect CSS implementation.",
     features: ["Figma Prototyping", "Design System Creation", "Logo & Brand Identity", "Interactive Mockups"]

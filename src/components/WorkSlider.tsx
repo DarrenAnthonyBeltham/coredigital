@@ -1,28 +1,29 @@
 "use client";
-import { Carousel, Badge } from 'react-bootstrap';
+import { Carousel, Badge, Button } from 'react-bootstrap';
 import { useState } from 'react';
+import { FaArrowRight } from 'react-icons/fa';
 
 const projects = [
   {
     id: 1,
-    title: "E-Commerce Platform",
-    category: "Web Development",
-    desc: "A full-stack marketplace with real-time inventory and payment processing.",
-    bg: "#004aad", 
+    title: "E-Commerce Ecosystem",
+    category: "Full Stack Development",
+    desc: "A comprehensive marketplace solution processing over 10k transactions daily with real-time inventory management.",
+    bg: "#0b2545",
   },
   {
     id: 2,
-    title: "Finance Dashboard",
-    category: "UI/UX Design",
-    desc: "Investment tracking dashboard with interactive charts and dark mode.",
-    bg: "#002a62",
+    title: "FinTech Dashboard",
+    category: "UI/UX & Frontend",
+    desc: "High-performance trading interface with sub-millisecond data updates and institutional-grade security.",
+    bg: "#134074",
   },
   {
     id: 3,
-    title: "Logistics Mobile App",
-    category: "Mobile App",
-    desc: "Driver tracking and route optimization app for a logistics company.",
-    bg: "#007bff",
+    title: "Logistics Command Center",
+    category: "Mobile & Cloud",
+    desc: "AI-powered route optimization system reducing fleet fuel consumption by 30% for a national carrier.",
+    bg: "#13315c",
   },
 ];
 
@@ -34,24 +35,40 @@ export default function WorkSlider() {
   };
 
   return (
-    <Carousel activeIndex={index} onSelect={handleSelect} interval={3000} pause="hover" className="shadow-lg rounded-4 overflow-hidden">
+    <Carousel 
+      activeIndex={index} 
+      onSelect={handleSelect} 
+      interval={4000} 
+      pause="hover" 
+      controls={false}
+      className="shadow-lg rounded-5 overflow-hidden"
+    >
       {projects.map((project) => (
         <Carousel.Item key={project.id}>
           <div 
-            className="d-flex align-items-end" 
+            className="d-flex align-items-center" 
             style={{ 
-              height: '500px', 
-              backgroundColor: project.bg,
-              background: `linear-gradient(to bottom, ${project.bg}, #000000)`,
-              position: 'relative'
+              minHeight: '550px', 
+              background: `linear-gradient(135deg, ${project.bg} 0%, #000000 100%)`,
             }}
           >
-             {/* If you have real images, use: <img src={project.image} className="d-block w-100 h-100 object-fit-cover" /> */}
-            
-            <div className="p-5 w-100 text-white" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.9), transparent)' }}>
-                <Badge bg="light" text="dark" className="mb-2 px-3 py-2">{project.category}</Badge>
-                <h2 className="fw-bold mb-2">{project.title}</h2>
-                <p className="lead mb-0 text-white-50" style={{ fontSize: '1.1rem' }}>{project.desc}</p>
+            <div className="container px-5">
+              <div className="row align-items-center">
+                <div className="col-lg-8">
+                    <Badge bg="white" text="dark" className="mb-3 px-3 py-2 fw-bold text-uppercase tracking-wider">
+                        {project.category}
+                    </Badge>
+                    <h2 className="display-4 fw-bold text-white mb-4" style={{ letterSpacing: '-1px' }}>
+                        {project.title}
+                    </h2>
+                    <p className="lead text-white-50 mb-5" style={{ maxWidth: '600px' }}>
+                        {project.desc}
+                    </p>
+                    <Button variant="outline-light" className="rounded-pill px-4 py-2 d-inline-flex align-items-center gap-2">
+                        View Case Study <FaArrowRight />
+                    </Button>
+                </div>
+              </div>
             </div>
           </div>
         </Carousel.Item>
