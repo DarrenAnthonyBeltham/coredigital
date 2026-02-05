@@ -78,6 +78,7 @@ h2 {
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
+  background: white;
 }
 
 .service-card-body {
@@ -94,5 +95,12 @@ h2 {
   .btn-primary-custom, 
   .btn-outline-custom {
     width: auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
   }
 }
