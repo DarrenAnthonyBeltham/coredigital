@@ -1,6 +1,7 @@
 "use client";
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import TechGrid from '@/components/TechGrid'; 
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import { FaRocket, FaUsers, FaAward, FaHandshake } from 'react-icons/fa';
@@ -13,7 +14,7 @@ const stats = [
 ];
 
 const values = [
-    { icon: <FaRocket />, title: "Innovation First", text: "We don't just follow trends; we engineer solutions that set new standards." },
+    { icon: <FaRocket />, title: "Innovation First", text: "We don't just follow trends, we engineer solutions that set new standards." },
     { icon: <FaUsers />, title: "Client Partnership", text: "We work as an extension of your team, not just a vendor." },
     { icon: <FaAward />, title: "Excellence", text: "Pixel-perfect design and clean, scalable code are our non-negotiables." },
     { icon: <FaHandshake />, title: "Transparency", text: "Clear communication and honest timelines from day one." },
@@ -42,7 +43,7 @@ export default function AboutPage() {
                                 We are a premium software house dedicated to transforming complex business challenges into elegant, scalable digital solutions.
                             </p>
                             <p className="text-muted mb-0">
-                                Founded on the principles of engineering rigor and design excellence, CoreDigital bridges the gap between creative vision and technical execution. We don&apos;t just build software; we build the infrastructure for your company&apos;s growth.
+                                Founded on the principles of engineering rigor and design excellence, CoreDigital bridges the gap between creative vision and technical execution. We don&apos;t just build software, we build the infrastructure for your company&apos;s growth.
                             </p>
                         </motion.div>
                     </Col>
@@ -86,6 +87,8 @@ export default function AboutPage() {
             </Container>
         </section>
 
+        <TechGrid />
+
         <section className="section-padding">
             <Container>
                 <div className="text-center mb-5">
@@ -99,7 +102,7 @@ export default function AboutPage() {
                                 whileHover={{ y: -5 }}
                                 className="h-100"
                             >
-                                <Card className="border-0 shadow-sm h-100 p-4">
+                                <Card className="border-0 shadow-sm h-100 p-4" style={{ borderRadius: '16px' }}>
                                     <Card.Body>
                                         <div className="mb-3 text-primary-blue fs-2">{val.icon}</div>
                                         <h4 className="fw-bold mb-3" style={{ color: '#002a62' }}>{val.title}</h4>
