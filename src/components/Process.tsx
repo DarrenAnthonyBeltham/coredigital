@@ -19,7 +19,6 @@ export default function Process() {
         </div>
 
         <Row className="g-4 position-relative">
-            {/* Connecting Line (Desktop Only) */}
             <div className="d-none d-lg-block position-absolute top-50 start-0 w-100 border-top border-2 border-light" style={{ zIndex: 0, transform: 'translateY(-20px)' }}></div>
 
             {steps.map((step, idx) => (
